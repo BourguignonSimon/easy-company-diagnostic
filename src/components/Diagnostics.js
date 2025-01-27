@@ -5,7 +5,7 @@ const Diagnostics = () => {
   const diagnostics = [
     { id: 1, name: 'Audit 360°', icon: '🔎', description: 'Analyse complète de votre entreprise' },
     { id: 2, name: 'Analyse concurrentielle', icon: '🥇', description: 'Benchmarking des acteurs du marché' },
-    { id: 3, name: 'Expérience employé', icon: '🤝', description: 'Enquête de satisfaction interne' },
+    { id: 3, name: 'Expérience employé', icon: '🙍', description: 'Enquête de satisfaction interne' },
   ];
 
   return (
