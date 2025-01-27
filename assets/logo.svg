@@ -1,0 +1,10 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Easy Company Logo</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Easy-Company-Logo" fill="#002147" fill-rule="nonzero">
+            <path d="M75,0 C116.568542,0 150,33.4314575 150,75 C150,116.568542 116.568542,150 75,150 C33.4314575,150 0,116.568542 0,75 C0,33.4314575 33.4314575,0 75,0 Z M75,15 C44.0785318,15 15,44.0785318 15,75 C15,105.92147 44.0785318,135 75,135 C105.92147,135 135,105.92147 135,75 C135,44.0785318 105.92147,15 75,15 Z M75,92 L75,60 L87,60 C93.627417,60 99,65.372583 99,72 C99,78.627417 93.627417,84 87,84 L75,84 L75,92 Z M72,132 L72,120 L78,120 L78,132 L72,132 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
