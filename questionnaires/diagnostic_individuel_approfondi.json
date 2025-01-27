@@ -1,0 +1,92 @@
+{
+  "title": "Diagnostic Individuel Approfondi",
+  "version": "2.0",
+  "sections": [
+    {
+      "id": "competences_professionnelles",
+      "title": "Compétences Professionnelles",
+      "questions": [
+        {
+          "id": "comp_1",
+          "type": "scale",
+          "question": "Dans quelle mesure maîtrisez-vous les compétences clés de votre métier ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Débutant", "Intermédiaire", "Compétent", "Avancé", "Expert"],
+          "kpi_ref": "competence_niveau"
+        },
+        {
+          "id": "comp_2",
+          "type": "multiple_choice",
+          "question": "Quelles sont vos principales forces professionnelles ?",
+          "options": [
+            "Communication", 
+            "Leadership", 
+            "Résolution de problèmes", 
+            "Créativité", 
+            "Travail d'équipe", 
+            "Adaptabilité"
+          ],
+          "multiple": true,
+          "kpi_ref": "forces_professionnelles"
+        }
+      ]
+    },
+    {
+      "id": "developpement_personnel",
+      "title": "Développement Personnel",
+      "questions": [
+        {
+          "id": "dev_1",
+          "type": "scale",
+          "question": "Dans quelle mesure investissez-vous dans votre développement personnel ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Jamais", "Rarement", "Parfois", "Régulièrement", "Constamment"],
+          "kpi_ref": "investissement_personnel"
+        },
+        {
+          "id": "dev_2",
+          "type": "multiple_choice",
+          "question": "Quels sont vos principaux objectifs de développement ?",
+          "options": [
+            "Monter en compétences techniques",
+            "Développer le leadership",
+            "Améliorer la communication",
+            "Progresser dans la gestion de projet",
+            "Développer la créativité"
+          ],
+          "multiple": true,
+          "kpi_ref": "objectifs_developpement"
+        }
+      ]
+    },
+    {
+      "id": "motivation_carriere",
+      "title": "Motivation et Orientation de Carrière",
+      "questions": [
+        {
+          "id": "motivation_1",
+          "type": "scale",
+          "question": "À quel point êtes-vous satisfait de votre parcours professionnel actuel ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très insatisfait", "Insatisfait", "Neutre", "Satisfait", "Très satisfait"],
+          "kpi_ref": "satisfaction_professionnelle"
+        },
+        {
+          "id": "motivation_2",
+          "type": "multiple_choice",
+          "question": "Quels sont vos principaux domaines d'ambition professionnelle ?",
+          "options": [
+            "Évolution hiérarchique",
+            "Expertise technique",
+            "Entrepreneuriat",
+            "Innovation",
+            "Impact social",
+            "Équilibre vie professionnelle/personnelle"
+          ],
+          "multiple": true,
+          "kpi_ref": "ambitions_professionnelles"
+        }
+      ]
+    }
+  ]
+}
