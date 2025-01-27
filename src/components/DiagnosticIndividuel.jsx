@@ -1,38 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import QuestionnaireForm from './QuestionnaireForm';
 
 const DiagnosticIndividuel = () => {
   const [isStarted, setIsStarted] = useState(false);
 
   const handleStartDiagnostic = () => {
     setIsStarted(true);
-    // Logique pour commencer le diagnostic
-    console.log("Début du diagnostic individuel");
   };
 
   if (isStarted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col items-center justify-center p-4">
-        <div className="max-w-2xl w-full bg-white shadow-2xl rounded-xl p-10">
-          <h1 className="text-3xl font-bold text-blue-900 mb-6 text-center">
-            Questionnaire de Diagnostic Individuel
-          </h1>
-          
-          <p className="text-gray-700 mb-6 text-center">
-            Le formulaire de diagnostic est en cours de développement.
-          </p>
-
-          <div className="text-center">
-            <button 
-              onClick={() => setIsStarted(false)}
-              className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
-            >
-              Retour
-            </button>
-          </div>
-        </div>
-      </div>
-    );
+    return <QuestionnaireForm type="rapide" />;
   }
 
   return (
