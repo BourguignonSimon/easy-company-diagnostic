@@ -1,0 +1,50 @@
+{
+  "title": "Diagnostic Organisationnel",
+  "version": "1.0",
+  "sections": [
+    {
+      "id": "structure",
+      "title": "Structure et Processus",
+      "questions": [
+        {
+          "id": "str_1",
+          "type": "scale",
+          "question": "Les rôles et responsabilités sont-ils clairement définis dans l'organisation ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Partiellement", "Moyennement", "Largement", "Totalement"],
+          "kpi_ref": "clarity_score"
+        },
+        {
+          "id": "str_2",
+          "type": "scale",
+          "question": "Les processus de décision sont-ils efficaces et bien compris ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très inefficaces", "Plutôt inefficaces", "Moyens", "Plutôt efficaces", "Très efficaces"],
+          "kpi_ref": "decision_efficiency"
+        }
+      ]
+    },
+    {
+      "id": "communication",
+      "title": "Communication Interne",
+      "questions": [
+        {
+          "id": "com_1",
+          "type": "scale",
+          "question": "L'information circule-t-elle efficacement entre les différents niveaux de l'organisation ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très mal", "Plutôt mal", "Moyennement", "Plutôt bien", "Très bien"],
+          "kpi_ref": "communication_flow"
+        },
+        {
+          "id": "com_2",
+          "type": "multiple_choice",
+          "question": "Quels sont les principaux canaux de communication utilisés ?",
+          "options": ["Email", "Réunions", "Chat", "Intranet", "Face à face"],
+          "multiple": true,
+          "kpi_ref": "communication_channels"
+        }
+      ]
+    }
+  ]
+}
