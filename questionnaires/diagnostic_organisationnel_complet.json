@@ -1,0 +1,121 @@
+{
+  "title": "Diagnostic Organisationnel Complet",
+  "version": "2.0",
+  "sections": [
+    {
+      "id": "structure_gouvernance",
+      "title": "Structure et Gouvernance",
+      "questions": [
+        {
+          "id": "struct_1",
+          "type": "scale",
+          "question": "Dans quelle mesure votre structure organisationnelle permet-elle une prise de décision efficace ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très inefficace", "Inefficace", "Moyenne", "Efficace", "Très efficace"],
+          "kpi_ref": "efficacite_decision"
+        },
+        {
+          "id": "struct_2",
+          "type": "multiple_choice",
+          "question": "Quels sont les principaux défis de votre structure organisationnelle ?",
+          "options": [
+            "Silos départementaux",
+            "Lourdeur administrative", 
+            "Manque de transparence",
+            "Communication cloisonnée",
+            "Processus de décision complexes"
+          ],
+          "multiple": true,
+          "kpi_ref": "defis_organisationnels"
+        }
+      ]
+    },
+    {
+      "id": "culture_entreprise",
+      "title": "Culture d'Entreprise",
+      "questions": [
+        {
+          "id": "culture_1",
+          "type": "scale",
+          "question": "Dans quelle mesure votre culture d'entreprise favorise-t-elle l'innovation ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Faiblement", "Moyennement", "Fortement", "Totalement"],
+          "kpi_ref": "culture_innovation"
+        },
+        {
+          "id": "culture_2",
+          "type": "multiple_choice",
+          "question": "Quelles sont vos valeurs d'entreprise principales ?",
+          "options": [
+            "Intégrité",
+            "Excellence",
+            "Collaboration", 
+            "Responsabilité sociale",
+            "Agilité",
+            "Entrepreneuriat interne"
+          ],
+          "multiple": true,
+          "kpi_ref": "valeurs_entreprise"
+        }
+      ]
+    },
+    {
+      "id": "performance_operationnelle",
+      "title": "Performance Opérationnelle",
+      "questions": [
+        {
+          "id": "perf_1",
+          "type": "scale",
+          "question": "Évaluez l'efficacité de vos processus opérationnels",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très inefficaces", "Inefficaces", "Moyens", "Efficaces", "Très efficaces"],
+          "kpi_ref": "efficacite_processus"
+        },
+        {
+          "id": "perf_2",
+          "type": "multiple_choice",
+          "question": "Quels sont vos principaux leviers d'amélioration de la performance ?",
+          "options": [
+            "Digitalisation",
+            "Formation",
+            "Optimisation des processus",
+            "Investissement technologique",
+            "Réorganisation",
+            "Gestion de la performance"
+          ],
+          "multiple": true,
+          "kpi_ref": "leviers_performance"
+        }
+      ]
+    },
+    {
+      "id": "ressources_humaines",
+      "title": "Gestion des Ressources Humaines",
+      "questions": [
+        {
+          "id": "rh_1",
+          "type": "scale",
+          "question": "Dans quelle mesure votre politique RH favorise-t-elle le développement des talents ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très faiblement", "Faiblement", "Moyennement", "Fortement", "Très fortement"],
+          "kpi_ref": "developpement_talents"
+        },
+        {
+          "id": "rh_2",
+          "type": "multiple_choice",
+          "question": "Quels sont vos principaux défis en ressources humaines ?",
+          "options": [
+            "Recrutement",
+            "Rétention des talents",
+            "Motivation des équipes",
+            "Gestion des compétences",
+            "Formation continue",
+            "Diversité et inclusion"
+          ],
+          "multiple": true,
+          "kpi_ref": "defis_rh"
+        }
+      ]
+    }
+  ]
+}
