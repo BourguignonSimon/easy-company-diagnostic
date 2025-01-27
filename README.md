@@ -1,13 +1,36 @@
 # Easy Company Diagnostic
 
-## 🏢 Description
-Outil de diagnostic organisationnel complet pour Easy Company, permettant d'évaluer et d'analyser la performance et la santé globale de l'entreprise.
+## 🚀 Description
+Outil complet de diagnostic organisationnel et individuel, permettant d'évaluer et d'analyser la performance, la stratégie et le potentiel.
 
-## ✨ Fonctionnalités
-- Questionnaires de diagnostic organisationnel
-- Analyse de performance
-- Tableaux de bord interactifs
-- Génération de rapports
+## 📊 Types de Diagnostics
+
+### 1. Diagnostic Rapide Stratégique
+- Vue d'ensemble rapide
+- Évaluation des défis stratégiques
+- Analyse de la performance financière
+- Durée estimée : 5-10 minutes
+
+### 2. Diagnostic Individuel Approfondi
+- Analyse des compétences professionnelles
+- Évaluation du développement personnel
+- Exploration des motivations de carrière
+- Durée estimée : 15-20 minutes
+
+### 3. Diagnostic Organisationnel Complet
+- Évaluation de la structure et gouvernance
+- Analyse de la culture d'entreprise
+- Revue de la performance opérationnelle
+- Analyse des ressources humaines
+- Durée estimée : 25-30 minutes
+
+## 🛠 Fonctionnalités
+
+- Questionnaires interactifs
+- Analyse détaillée des résultats
+- Visualisation graphique des performances
+- Recommandations personnalisées
+- Export des résultats
 
 ## 🚀 Démarrage Rapide
 
@@ -25,6 +48,9 @@ cd easy-company-diagnostic
 
 # Installer les dépendances
 npm install
+
+# Démarrer le serveur de développement
+npm run dev
 ```
 
 ### Commandes Principales
@@ -33,26 +59,28 @@ npm install
 - `npm run preview` : Prévisualiser la version de production
 - `npm run test` : Exécuter les tests
 
-## 🛠 Technologies Utilisées
+## 🛠 Technologies
 - React 18
 - Vite
 - Tailwind CSS
-- Radix UI
-- Recharts
+- React Router
+- Recharts (visualisation)
 
-## 📋 Structure du Projet
+## 📈 Structure du Projet
 ```
 src/
 ├── components/
-│   ├── DiagnosticForm.jsx
+│   ├── QuestionnaireForm.jsx
+│   ├── DiagnosticResults.jsx
 │   └── ...
-├── pages/
+├── questionnaires/
+│   ├── diagnostic_rapide_strategique.json
+│   ├── diagnostic_individuel_approfondi.json
+│   └── diagnostic_organisationnel_complet.json
 ├── utils/
+│   └── questionnaireAnalyzer.js
 └── App.jsx
 ```
-
-## 🧪 Tests
-Les tests sont configurés avec Jest. Ajoutez vos tests dans le dossier `__tests__`.
 
 ## 🤝 Contribution
 1. Forker le projet
