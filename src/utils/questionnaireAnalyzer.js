@@ -1,12 +1,19 @@
+// Analyseur de questionnaires avancé
 export const analyzeQuestionnaire = (questionnaire, responses) => {
   const results = {
+    title: questionnaire.title,
     sections: {},
     overall: {
       score: 0,
       interpretation: '',
-      recommendedActions: []
+      recommendedActions: [],
+      strengths: [],
+      areas_for_improvement: []
     }
   };
+
+  let totalScore = 0;
+  let totalMaxScore = 0;
 
   // Analyse par section
   questionnaire.sections.forEach(section => {
@@ -14,70 +21,96 @@ export const analyzeQuestionnaire = (questionnaire, responses) => {
       title: section.title,
       score: 0,
       maxScore: 0,
+      percentage: 0,
       questions: {}
     };
 
     section.questions.forEach(question => {
       const response = responses[question.id];
       
+      // Analyse des questions de type échelle
       if (question.type === 'scale') {
         const score = response || 0;
+        const maxScore = Math.max(...question.scale);
+        
         sectionResults.score += score;
-        sectionResults.maxScore += 5; // score max de l'échelle
+        sectionResults.maxScore += maxScore;
         
         sectionResults.questions[question.id] = {
           question: question.question,
           score: score,
-          interpretation: getScaleInterpretation(score)
+          max_score: maxScore,
+          interpretation: getScaleInterpretation(score, maxScore),
+          label: question.labels[question.scale.indexOf(score)]
         };
       }
       
+      // Analyse des questions à choix multiples
       if (question.type === 'multiple_choice') {
         const selectedOptions = response || [];
+        
         sectionResults.questions[question.id] = {
           question: question.question,
-          selectedOptions: selectedOptions,
-          interpretation: getMultipleChoiceInterpretation(selectedOptions)
+          selected_options: selectedOptions,
+          interpretation: getMultipleChoiceInterpretation(selectedOptions, question.options)
         };
       }
     });
 
-    // Calcul du score en pourcentage
-    sectionResults.scorePercentage = 
-      sectionResults.maxScore > 0 
-        ? (sectionResults.score / sectionResults.maxScore) * 100 
-        : 0;
+    // Calcul du score de section
+    sectionResults.percentage = sectionResults.maxScore > 0 
+      ? (sectionResults.score / sectionResults.maxScore) * 100 
+      : 0;
 
     results.sections[section.id] = sectionResults;
+    
+    // Calcul du score global
+    totalScore += sectionResults.score;
+    totalMaxScore += sectionResults.maxScore;
   });
 
-  // Calcul du score global
-  const sectionScores = Object.values(results.sections).map(s => s.scorePercentage);
+  // Score global
   results.overall.score = 
-    sectionScores.reduce((a, b) => a + b, 0) / sectionScores.length;
+    totalMaxScore > 0 ? (totalScore / totalMaxScore) * 100 : 0;
 
+  // Interprétation globale
   results.overall.interpretation = getOverallInterpretation(results.overall.score);
-  results.overall.recommendedActions = getRecommendedActions(results.overall.score);
+  
+  // Actions recommandées
+  results.overall.recommendedActions = getRecommendedActions(
+    results.overall.score, 
+    results.sections
+  );
+
+  // Forces et axes d'amélioration
+  const analysis = identifyStrengthsAndWeaknesses(results.sections);
+  results.overall.strengths = analysis.strengths;
+  results.overall.areas_for_improvement = analysis.areas_for_improvement;
 
   return results;
 };
 
-const getScaleInterpretation = (score) => {
-  const interpretations = [
-    'Très faible',
-    'Faible',
-    'Moyen',
-    'Bon',
-    'Excellent'
-  ];
-  return interpretations[score - 1] || 'Non renseigné';
+// Interprétation des questions à échelle
+const getScaleInterpretation = (score, maxScore) => {
+  const percentage = (score / maxScore) * 100;
+  if (percentage < 20) return 'Très faible';
+  if (percentage < 40) return 'Faible';
+  if (percentage < 60) return 'Moyen';
+  if (percentage < 80) return 'Bon';
+  return 'Excellent';
 };
 
-const getMultipleChoiceInterpretation = (selectedOptions) => {
-  if (selectedOptions.length === 0) return 'Aucune option sélectionnée';
-  return `${selectedOptions.length} option(s) sélectionnée(s)`;
+// Interprétation des questions à choix multiples
+const getMultipleChoiceInterpretation = (selectedOptions, allOptions) => {
+  const selectionRate = (selectedOptions.length / allOptions.length) * 100;
+  if (selectionRate === 0) return 'Aucune option sélectionnée';
+  if (selectionRate < 25) return 'Sélection limitée';
+  if (selectionRate < 50) return 'Sélection partielle';
+  if (selectionRate < 75) return 'Sélection significative';
+  return 'Sélection complète';
 };
 
+// Interprétation globale
 const getOverallInterpretation = (score) => {
   if (score < 20) return 'Besoin critique d\'amélioration';
   if (score < 40) return 'Plusieurs points faibles à travailler';
@@ -86,38 +119,37 @@ const getOverallInterpretation = (score) => {
   return 'Performance excellente';
 };
 
-const getRecommendedActions = (score) => {
-  const actions = [
-    'Besoin critique d\'amélioration' => [
-      'Réaliser un audit approfondi',
-      'Mettre en place un plan de transformation',
-      'Former l\'équipe de management'
-    ],
-    'Plusieurs points faibles à travailler' => [
-      'Identifier les domaines prioritaires',
-      'Développer des plans d\'action ciblés',
-      'Renforcer la communication interne'
-    ],
-    'Performance moyenne' => [
-      'Optimiser les processus existants',
-      'Investir dans le développement des compétences',
-      'Encourager l\'innovation'
-    ],
-    'Bonnes performances générales' => [
-      'Maintenir les pratiques actuelles',
-      'Rechercher des opportunités d\'amélioration continue',
-      'Valoriser les équipes performantes'
-    ],
-    'Performance excellente' => [
-      'Documenter et partager les bonnes pratiques',
-      'Continuer à investir dans le développement',
-      'Rester à la pointe de l\'innovation'
-    ]
-  ];
+// Actions recommandées
+const getRecommendedActions = (overallScore, sections) => {
+  const actions = [];
 
-  if (score < 20) return actions['Besoin critique d\'amélioration'];
-  if (score < 40) return actions['Plusieurs points faibles à travailler'];
-  if (score < 60) return actions['Performance moyenne'];
-  if (score < 80) return actions['Bonnes performances générales'];
-  return actions['Performance excellente'];
+  // Actions générales basées sur le score global
+  if (overallScore < 40) {
+    actions.push('Réaliser un audit approfondi');
+    actions.push('Élaborer un plan de transformation structurel');
+  } else if (overallScore < 60) {
+    actions.push('Identifier les domaines prioritaires d\'amélioration');
+    actions.push('Développer des plans d\'action ciblés');
+  } else {
+    actions.push('Maintenir et renforcer les pratiques actuelles');
+    actions.push('Rechercher des opportunités d\'innovation');
+  }
+
+  return actions;
+};
+
+// Identification des forces et axes d'amélioration
+const identifyStrengthsAndWeaknesses = (sections) => {
+  const strengths = [];
+  const areas_for_improvement = [];
+
+  Object.values(sections).forEach(section => {
+    if (section.percentage >= 80) {
+      strengths.push(section.title);
+    } else if (section.percentage < 40) {
+      areas_for_improvement.push(section.title);
+    }
+  });
+
+  return { strengths, areas_for_improvement };
 };
