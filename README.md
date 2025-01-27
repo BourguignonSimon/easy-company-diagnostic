@@ -1,17 +1,70 @@
-# Easy Company Diagnostic Tools
+# Easy Company Diagnostic
 
-Outils de diagnostic organisationnel et coaching pour Easy Company.
+## 🏢 Description
+Outil de diagnostic organisationnel complet pour Easy Company, permettant d'évaluer et d'analyser la performance et la santé globale de l'entreprise.
 
-## Structure du projet
+## ✨ Fonctionnalités
+- Questionnaires de diagnostic organisationnel
+- Analyse de performance
+- Tableaux de bord interactifs
+- Génération de rapports
 
-- `/questionnaires` : Contient les questionnaires au format JSON
-- `/dashboard` : Tableaux de bord et visualisations
-- `/kpis` : Définition et calcul des KPIs
+## 🚀 Démarrage Rapide
 
-## Installation
+### Prérequis
+- Node.js (version 18+)
+- npm (version 9+)
 
-[Instructions à venir]
+### Installation
+```bash
+# Cloner le dépôt
+git clone https://github.com/BourguignonSimon/easy-company-diagnostic.git
 
-## Utilisation
+# Accéder au dossier du projet
+cd easy-company-diagnostic
 
-[Instructions à venir]
+# Installer les dépendances
+npm install
+```
+
+### Commandes Principales
+- `npm run dev` : Démarrer le serveur de développement
+- `npm run build` : Construire l'application pour la production
+- `npm run preview` : Prévisualiser la version de production
+- `npm run test` : Exécuter les tests
+
+## 🛠 Technologies Utilisées
+- React 18
+- Vite
+- Tailwind CSS
+- Radix UI
+- Recharts
+
+## 📋 Structure du Projet
+```
+src/
+├── components/
+│   ├── DiagnosticForm.jsx
+│   └── ...
+├── pages/
+├── utils/
+└── App.jsx
+```
+
+## 🧪 Tests
+Les tests sont configurés avec Jest. Ajoutez vos tests dans le dossier `__tests__`.
+
+## 🤝 Contribution
+1. Forker le projet
+2. Créer une branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Commiter vos modifications (`git commit -m 'Add some AmazingFeature'`)
+4. Pousser la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrir une Pull Request
+
+## 📄 Licence
+Distribué sous la licence MIT.
+
+## 📞 Contact
+Simon Bourguignon - bourguignon.simon@gmail.com
+
+Projet Link: [https://github.com/BourguignonSimon/easy-company-diagnostic](https://github.com/BourguignonSimon/easy-company-diagnostic)
