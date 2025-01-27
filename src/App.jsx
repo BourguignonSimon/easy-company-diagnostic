@@ -10,44 +10,59 @@ function App() {
         </h1>
         
         <p className="text-xl text-gray-700 mb-8">
-          Évaluez la performance et la santé organisationnelle de votre entreprise
+          Choisissez le type de diagnostic qui correspond le mieux à vos besoins
         </p>
         
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
           <div className="bg-blue-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all">
             <h2 className="text-2xl font-semibold text-blue-800 mb-4">
-              Diagnostic Individuel
+              Diagnostic Rapide
             </h2>
             <p className="text-gray-600 mb-4">
-              Analyse approfondie des compétences et du potentiel individuel
+              Vue d'ensemble stratégique en quelques minutes
             </p>
             <Link 
-              to="/diagnostic-individuel"
+              to="/diagnostic-rapide"
               className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors inline-block"
             >
-              Commencer le diagnostic
+              Commencer
             </Link>
           </div>
           
           <div className="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all">
             <h2 className="text-2xl font-semibold text-green-800 mb-4">
+              Diagnostic Individuel
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Analyse approfondie de votre potentiel personnel
+            </p>
+            <Link 
+              to="/diagnostic-individuel"
+              className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors inline-block"
+            >
+              Commencer
+            </Link>
+          </div>
+          
+          <div className="bg-purple-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all">
+            <h2 className="text-2xl font-semibold text-purple-800 mb-4">
               Diagnostic Organisationnel
             </h2>
             <p className="text-gray-600 mb-4">
-              Évaluation complète de la structure et de la dynamique d'entreprise
+              Évaluation complète de votre structure d'entreprise
             </p>
             <Link 
               to="/diagnostic-organisationnel"
-              className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors inline-block"
+              className="bg-purple-600 text-white px-6 py-3 rounded-full hover:bg-purple-700 transition-colors inline-block"
             >
-              Commencer le diagnostic
+              Commencer
             </Link>
           </div>
         </div>
         
         <div className="border-t border-gray-200 pt-6 mt-6">
           <p className="text-gray-500">
-            Choisissez le type de diagnostic que vous souhaitez réaliser
+            Sélectionnez le diagnostic qui répond le mieux à vos objectifs actuels
           </p>
         </div>
       </div>
