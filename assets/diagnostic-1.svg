@@ -1,0 +1,10 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Diagnostic Rapide</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Diagnostic-Rapide" fill="#002147" fill-rule="nonzero">
+            <path d="M40,0 C62.0913704,0 80,17.9086296 80,40 C80,62.0913704 62.0913704,80 40,80 C17.9086296,80 0,62.0913704 0,40 C0,17.9086296 17.9086296,0 40,0 Z M40,8 C22.8791728,8 8,22.8791728 8,40 C8,57.1208272 22.8791728,72 40,72 C57.1208272,72 72,57.1208272 72,40 C72,22.8791728 57.1208272,8 40,8 Z M40,50 L40,32 L46,32 C50.418278,32 54,35.581722 54,40 C54,44.418278 50.418278,48 46,48 L40,48 L40,50 Z M38,72 L38,64 L42,64 L42,72 L38,72 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
