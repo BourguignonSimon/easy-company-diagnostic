@@ -1,0 +1,93 @@
+{
+  "title": "Diagnostic Rapide Stratégique",
+  "version": "2.0",
+  "sections": [
+    {
+      "id": "vision_strategique",
+      "title": "Vision Stratégique",
+      "questions": [
+        {
+          "id": "vision_1",
+          "type": "scale",
+          "question": "Dans quelle mesure votre stratégie actuelle vous permet-elle d'atteindre vos objectifs ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Faiblement", "Partiellement", "Largement", "Totalement"],
+          "kpi_ref": "alignement_strategique"
+        },
+        {
+          "id": "vision_2",
+          "type": "multiple_choice",
+          "question": "Quels sont vos principaux défis stratégiques actuels ?",
+          "options": [
+            "Croissance du marché",
+            "Innovation",
+            "Concurrence",
+            "Transformation digitale",
+            "Adaptation réglementaire",
+            "Ressources financières"
+          ],
+          "multiple": true,
+          "kpi_ref": "defis_strategiques"
+        }
+      ]
+    },
+    {
+      "id": "performance_financiere",
+      "title": "Performance Financière",
+      "questions": [
+        {
+          "id": "finance_1",
+          "type": "scale",
+          "question": "Comment évalueriez-vous la santé financière globale de votre entreprise ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Critique", "Difficile", "Stable", "Bonne", "Excellente"],
+          "kpi_ref": "sante_financiere"
+        },
+        {
+          "id": "finance_2",
+          "type": "multiple_choice",
+          "question": "Quels sont vos principaux objectifs financiers ?",
+          "options": [
+            "Augmentation du chiffre d'affaires",
+            "Réduction des coûts",
+            "Amélioration de la rentabilité",
+            "Investissement dans la croissance",
+            "Diversification des revenus",
+            "Optimisation fiscale"
+          ],
+          "multiple": true,
+          "kpi_ref": "objectifs_financiers"
+        }
+      ]
+    },
+    {
+      "id": "maturite_organisationnelle",
+      "title": "Maturité Organisationnelle",
+      "questions": [
+        {
+          "id": "maturite_1",
+          "type": "scale",
+          "question": "Dans quelle mesure votre organisation est-elle adaptable aux changements ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très rigide", "Peu flexible", "Moyennement adaptable", "Assez flexible", "Très agile"],
+          "kpi_ref": "agilite_organisationnelle"
+        },
+        {
+          "id": "maturite_2",
+          "type": "multiple_choice",
+          "question": "Quels sont vos principaux axes d'amélioration organisationnelle ?",
+          "options": [
+            "Communication interne",
+            "Processus opérationnels",
+            "Culture d'entreprise",
+            "Technologies",
+            "Compétences des collaborateurs",
+            "Leadership"
+          ],
+          "multiple": true,
+          "kpi_ref": "axes_amelioration"
+        }
+      ]
+    }
+  ]
+}
