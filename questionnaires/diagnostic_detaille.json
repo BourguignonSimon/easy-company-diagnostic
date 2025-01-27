@@ -1,0 +1,124 @@
+{
+  "title": "Diagnostic Organisationnel - Version Détaillée",
+  "version": "1.0",
+  "estimated_time": "5min",
+  "sections": [
+    {
+      "id": "structure",
+      "title": "Structure et Organisation",
+      "questions": [
+        {
+          "id": "str_1",
+          "type": "scale",
+          "question": "Les rôles et responsabilités sont-ils clairement définis ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Peu", "Moyennement", "Largement", "Totalement"],
+          "kpi_ref": "role_clarity"
+        },
+        {
+          "id": "str_2",
+          "type": "scale",
+          "question": "La structure hiérarchique facilite-t-elle la prise de décision ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Peu", "Moyennement", "Bien", "Très bien"],
+          "kpi_ref": "hierarchy_efficiency"
+        },
+        {
+          "id": "str_3",
+          "type": "multiple_choice",
+          "question": "Quels aspects de la structure organisationnelle nécessitent une amélioration ?",
+          "options": [
+            "Définition des rôles",
+            "Processus de décision",
+            "Répartition des ressources",
+            "Communication inter-services",
+            "Coordination d'équipe"
+          ],
+          "multiple": true,
+          "kpi_ref": "structure_improvement_needs"
+        }
+      ]
+    },
+    {
+      "id": "communication",
+      "title": "Communication et Collaboration",
+      "questions": [
+        {
+          "id": "com_1",
+          "type": "scale",
+          "question": "La communication entre les équipes est-elle efficace ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très inefficace", "Peu efficace", "Moyenne", "Efficace", "Très efficace"],
+          "kpi_ref": "team_communication"
+        },
+        {
+          "id": "com_2",
+          "type": "scale",
+          "question": "Les informations importantes atteignent-elles les bonnes personnes au bon moment ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Jamais", "Rarement", "Parfois", "Souvent", "Toujours"],
+          "kpi_ref": "information_flow"
+        },
+        {
+          "id": "com_3",
+          "type": "multiple_choice",
+          "question": "Quels outils de communication utilisez-vous régulièrement ?",
+          "options": [
+            "Email",
+            "Messagerie instantanée",
+            "Visioconférence",
+            "Réunions présentielles",
+            "Plateforme collaborative",
+            "Intranet"
+          ],
+          "multiple": true,
+          "kpi_ref": "communication_tools"
+        }
+      ]
+    },
+    {
+      "id": "processus",
+      "title": "Processus et Efficacité",
+      "questions": [
+        {
+          "id": "proc_1",
+          "type": "scale",
+          "question": "Les processus actuels permettent-ils d'atteindre efficacement les objectifs ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Peu", "Moyennement", "Bien", "Très bien"],
+          "kpi_ref": "process_efficiency"
+        },
+        {
+          "id": "proc_2",
+          "type": "scale",
+          "question": "Les équipes ont-elles les ressources nécessaires pour être efficaces ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Peu", "Partiellement", "Largement", "Totalement"],
+          "kpi_ref": "resource_adequacy"
+        }
+      ]
+    },
+    {
+      "id": "culture",
+      "title": "Culture et Engagement",
+      "questions": [
+        {
+          "id": "cult_1",
+          "type": "scale",
+          "question": "L'ambiance de travail favorise-t-elle la collaboration ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Peu", "Moyennement", "Bien", "Très bien"],
+          "kpi_ref": "work_atmosphere"
+        },
+        {
+          "id": "cult_2",
+          "type": "scale",
+          "question": "Les valeurs de l'entreprise sont-elles comprises et partagées ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Peu", "Moyennement", "Bien", "Très bien"],
+          "kpi_ref": "values_alignment"
+        }
+      ]
+    }
+  ]
+}
