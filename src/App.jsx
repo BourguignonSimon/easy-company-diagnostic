@@ -1,22 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import DiagnosticLayout from './components/DiagnosticLayout';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
 import Home from './pages/Home';
-import DiagnosticPage from './pages/diagnostics';
-import ResultatPage from './pages/resultat';
+import DiagnosticForm from './components/DiagnosticForm';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/diagnostic" element={<DiagnosticLayout />}>
-          <Route path=":type" element={<DiagnosticPage />} />
-        </Route>
-        <Route path="/resultat" element={<ResultatPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Router>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/diagnostic/:type" element={<DiagnosticForm />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 };
 
