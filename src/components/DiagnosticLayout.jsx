@@ -38,7 +38,7 @@ const DiagnosticLayout = () => {
       <footer className="bg-white shadow-sm mt-8">
         <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-500 text-sm">
-            © 2025 Easy Company. Tous droits réservés.
+            © {new Date().getFullYear()} Easy Company. Tous droits réservés.
           </p>
         </div>
       </footer>
