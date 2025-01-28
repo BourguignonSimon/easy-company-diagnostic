@@ -1,38 +1,91 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import React, { useState, useEffect } from 'react';
+import { useDiagnostic } from '../context/DiagnosticContext';
 
+/**
+ * Composant de notification pour les erreurs globales
+ * @param {Object} props - Propriétés du composant
+ * @param {string} props.message - Message d'erreur à afficher
+ * @param {Function} props.onClose - Fonction de fermeture de la notification
+ */
+const GlobalErrorNotification = ({ message, onClose }) => {
+  return (
+    <div 
+      className="fixed top-4 right-4 z-50 bg-red-500 text-white px-6 py-4 rounded-lg shadow-xl flex items-center space-x-4"
+      role="alert"
+    >
+      <div>
+        <strong className="font-bold">Erreur : </strong>
+        <span className="block sm:inline">{message}</span>
+      </div>
+      <button 
+        onClick={onClose}
+        className="text-white hover:text-red-200 transition-colors"
+        aria-label="Fermer"
+      >
+        ✕
+      </button>
+    </div>
+  );
+};
+
+/**
+ * Layout principal de l'application
+ * Gère la structure globale et les notifications
+ * @param {Object} props - Propriétés du composant
+ * @param {React.ReactNode} props.children - Composants enfants à afficher
+ */
 const Layout = ({ children }) => {
-  const navigate = useNavigate();
+  // Récupération du contexte de diagnostic
+  const { error, handleError } = useDiagnostic();
+  
+  // État local pour gérer la visibilité des notifications
+  const [showError, setShowError] = useState(false);
+
+  // Effet pour gérer l'affichage des erreurs globales
+  useEffect(() => {
+    if (error) {
+      setShowError(true);
+      
+      // Masquage automatique après 5 secondes
+      const timer = setTimeout(() => {
+        setShowError(false);
+        handleError(null); // Réinitialisation de l'erreur
+      }, 5000);
+
+      // Nettoyage du timer
+      return () => clearTimeout(timer);
+    }
+  }, [error, handleError]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Button
-              variant="ghost"
-              onClick={() => navigate('/')}
-              className="text-xl font-bold"
-            >
-              Easy Company
-            </Button>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen flex flex-col">
+      {/* Notification d'erreur globale */}
+      {showError && error && (
+        <GlobalErrorNotification 
+          message={error}
+          onClose={() => {
+            setShowError(false);
+            handleError(null);
+          }}
+        />
+      )}
 
-      <main className="py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {children}
+      {/* Header de l'application */}
+      <header className="bg-easy-navy text-white p-4">
+        <div className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Easy Company Diagnostic</h1>
+          {/* Navigation ou autres éléments du header */}
         </div>
+      </header>
+
+      {/* Contenu principal */}
+      <main className="flex-grow container mx-auto px-4 py-8">
+        {children}
       </main>
 
-      <footer className="bg-white shadow-sm mt-8 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} Easy Company. Tous droits réservés.
-          </p>
-        </div>
+      {/* Footer de l'application */}
+      <footer className="bg-easy-blue text-white p-4 text-center">
+        <p>&copy; 2025 Easy Company. Tous droits réservés.</p>
       </footer>
     </div>
   );
