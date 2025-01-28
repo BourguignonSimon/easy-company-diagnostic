@@ -1,0 +1,43 @@
+{
+  "title": "Diagnostic Détaillé",
+  "version": "1.0",
+  "estimated_time": "5min",
+  "sections": [
+    {
+      "id": "structure",
+      "title": "Structure et Organisation",
+      "questions": [
+        {
+          "id": "str_1",
+          "type": "scale",
+          "question": "Les rôles et responsabilités sont-ils clairement définis ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Peu", "Moyennement", "Largement", "Totalement"],
+          "kpi_ref": "role_clarity"
+        },
+        {
+          "id": "str_2",
+          "type": "scale",
+          "question": "La structure hiérarchique facilite-t-elle la prise de décision ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Pas du tout", "Peu", "Moyennement", "Bien", "Très bien"],
+          "kpi_ref": "hierarchy_efficiency"
+        }
+      ]
+    },
+    {
+      "id": "communication",
+      "title": "Communication et Collaboration",
+      "questions": [
+        {
+          "id": "com_1",
+          "type": "scale",
+          "question": "La communication entre les équipes est-elle efficace ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très inefficace", "Peu efficace", "Moyenne", "Efficace", "Très efficace"],
+          "kpi_ref": "team_communication"
+        }
+      ]
+    }
+  ]
+}

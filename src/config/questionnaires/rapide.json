@@ -1,0 +1,36 @@
+{
+  "title": "Diagnostic Rapide",
+  "version": "1.0",
+  "estimated_time": "2min",
+  "sections": [
+    {
+      "id": "vue_globale",
+      "title": "Vue Globale",
+      "questions": [
+        {
+          "id": "global_1",
+          "type": "scale",
+          "question": "Comment évaluez-vous l'efficacité globale de votre organisation ?",
+          "scale": [1, 2, 3, 4, 5],
+          "labels": ["Très faible", "Faible", "Moyenne", "Bonne", "Excellente"],
+          "kpi_ref": "global_efficiency"
+        },
+        {
+          "id": "global_2",
+          "type": "multiple_choice",
+          "question": "Quels sont les principaux défis actuels ? (max 3)",
+          "options": [
+            "Communication",
+            "Processus de décision",
+            "Gestion des ressources",
+            "Clarté des rôles",
+            "Motivation des équipes"
+          ],
+          "multiple": true,
+          "max_selections": 3,
+          "kpi_ref": "main_challenges"
+        }
+      ]
+    }
+  ]
+}
