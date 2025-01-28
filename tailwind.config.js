@@ -20,7 +20,11 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-  ],
+  // Désactiver les styles par défaut si nécessaire
+  corePlugins: {
+    preflight: false, // Désactive les styles de réinitialisation de base
+  },
+  plugins: [],
+//    require('@tailwindcss/forms'),
+//  ],
 }
