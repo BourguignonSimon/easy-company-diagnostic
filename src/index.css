@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Vos styles personnalisés suivent */
 /* Reset et base */
 * {
   margin: 0;
