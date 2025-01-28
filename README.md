@@ -32,6 +32,34 @@ Outil complet de diagnostic organisationnel et individuel, permettant d'évaluer
 - Recommandations personnalisées
 - Export des résultats
 
+## 📈 Améliorations Prévues
+
+### En cours de développement
+1. **Export PDF des résultats** (#1)
+   - Génération de rapports professionnels
+   - Inclusion des graphiques et analyses
+   - Format optimisé pour l'impression
+
+2. **Comparaisons sectorielles** (#2)
+   - Benchmarking par secteur d'activité
+   - Analyses comparatives
+   - Identification des écarts de performance
+
+3. **Recommandations enrichies** (#3)
+   - Suggestions personnalisées détaillées
+   - Plan d'action concret
+   - Ressources et références
+
+4. **Expérience utilisateur améliorée** (#4)
+   - Animations fluides
+   - Transitions optimisées
+   - Feedback visuel enrichi
+
+5. **Historique et suivi** (#5)
+   - Sauvegarde des diagnostics
+   - Visualisation des progrès
+   - Comparaisons temporelles
+
 ## 🚀 Démarrage Rapide
 
 ### Prérequis
