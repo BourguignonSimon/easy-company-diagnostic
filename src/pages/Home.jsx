@@ -6,7 +6,21 @@ const Home = () => {
 
   return (
     <>
-      <section className="hero">
+      <header>
+        <nav>
+          <div className="logo">
+            <img src="/public/logo.svg" alt="Easy Company Logo" />
+          </div>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#diagnostics">Diagnostics</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section className="hero" id="home">
         <div className="hero-content">
           <h1>Easy is Smart - Smart is Easy</h1>
           <p>Évaluez la performance et la santé de votre entreprise</p>
@@ -17,7 +31,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="diagnostics">
+      <section className="diagnostics" id="diagnostics">
         <h2>Nos Diagnostics</h2>
         <div className="diagnostic-grid">
           <div className="diagnostic-card">
@@ -40,6 +54,30 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <footer id="contact">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <img src="/public/logo.svg" alt="Easy Company Logo" />
+          </div>
+          <div className="footer-links">
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#diagnostics">Diagnostics</a></li>
+              <li><a href="#results">Results</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div className="footer-social">
+            <a href="#"><i className="fab fa-facebook-f"></i></a>
+            <a href="#"><i className="fab fa-twitter"></i></a>
+            <a href="#"><i className="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div className="footer-copyright">
+          <p>&copy; 2023 Easy Company Diagnostic. All rights reserved.</p>
+        </div>
+      </footer>
     </>
   );
 };
