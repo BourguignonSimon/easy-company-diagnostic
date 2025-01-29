@@ -1,77 +1,127 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-
-const diagnosticTypes = [
-  {
-    id: 'rapide',
-    title: 'Diagnostic Rapide',
-    description: 'Évaluation rapide de votre organisation en 2 minutes',
-    duration: '2 minutes',
-    icon: '⏱',
-    benefits: ['Aperçu global rapide', 'Identification des priorités', 'Recommandations immédiates']
-  },
-  {
-    id: 'detaille',
-    title: 'Diagnostic Détaillé',
-    description: 'Analyse approfondie de votre organisation',
-    duration: '5 minutes',
-    icon: '📋',
-    benefits: ['Analyse complète', 'Recommandations détaillées', 'Plan d\'action personnalisé']
-  }
-];
+import { Link, useLocation } from 'react-router-dom';
 
 const Home = () => {
-  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">
-            Diagnostics Easy Company
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-easy-navy text-white py-4">
+        <nav className="container mx-auto flex justify-between items-center">
+          <div className="logo">
+            <Link to="/">
+              <img src="/public/logo.svg" alt="Easy Company Logo" />
+            </Link>
+          </div>
+          <ul className="flex space-x-6">
+            <li>
+              <Link
+                to="/"
+                className={`hover:text-easy-gold transition-colors ${
+                  location.pathname === '/' ? 'text-easy-gold' : ''
+                }`}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/diagnostic/rapide"
+                className={`hover:text-easy-gold transition-colors ${
+                  location.pathname === '/diagnostic/rapide' ? 'text-easy-gold' : ''
+                }`}
+              >
+                Diagnostic Rapide
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/diagnostic/individuel"
+                className={`hover:text-easy-gold transition-colors ${
+                  location.pathname === '/diagnostic/individuel' ? 'text-easy-gold' : ''
+                }`}
+              >
+                Diagnostic Individuel
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/diagnostic/organisationnel"
+                className={`hover:text-easy-gold transition-colors ${
+                  location.pathname === '/diagnostic/organisationnel' ? 'text-easy-gold' : ''
+                }`}
+              >
+                Diagnostic Organisationnel
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className={`hover:text-easy-gold transition-colors ${
+                  location.pathname === '/contact' ? 'text-easy-gold' : ''
+                }`}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div className="min-h-[calc(100vh-64px)] bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl font-bold text-easy-navy mb-6">
+            Optimisez votre entreprise avec nos diagnostics
           </h1>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-            Découvrez comment optimiser votre organisation avec nos outils de diagnostic.
-            Choisissez le format qui vous convient le mieux.
+          <p className="text-gray-600 mb-12">
+            Nos diagnostics vous permettent d'identifier les forces et faiblesses de votre entreprise
+            afin de mettre en place des actions ciblées pour améliorer sa performance.
           </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {diagnosticTypes.map((diagnostic) => (
-            <Card 
-              key={diagnostic.id}
-              className="hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 cursor-pointer"
-              onClick={() => navigate(`/diagnostic/${diagnostic.id}`)}
-            >
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
-                  <span className="text-3xl">{diagnostic.icon}</span>
-                  {diagnostic.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">{diagnostic.description}</p>
-                <div className="mb-4 text-sm text-gray-500">
-                  ⏰ Durée estimée : {diagnostic.duration}
-                </div>
-                <div className="space-y-2">
-                  <p className="font-medium">Avantages :</p>
-                  <ul className="list-disc pl-5 space-y-1">
-                    {diagnostic.benefits.map((benefit, index) => (
-                      <li key={index} className="text-gray-600">{benefit}</li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <img src="/public/diagnostic-1.svg" alt="Diagnostic Rapide" className="h-16 mx-auto mb-4" />
+              <h3 className="text-xl font-medium text-easy-navy mb-2">Diagnostic Rapide</h3>
+              <p className="text-gray-600">Évaluation stratégique en 2 minutes</p>
+              <Link
+                to="/diagnostic/rapide"
+                className="mt-4 inline-block bg-easy-orange text-white px-4 py-2 rounded-md hover:bg-easy-gold transition-colors"
+              >
+                Démarrer
+              </Link>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <img src="/public/diagnostic-2.svg" alt="Diagnostic Individuel" className="h-16 mx-auto mb-4" />
+              <h3 className="text-xl font-medium text-easy-navy mb-2">Diagnostic Individuel</h3>
+              <p className="text-gray-600">Analyse approfondie de votre potentiel</p>
+              <Link
+                to="/diagnostic/individuel"
+                className="mt-4 inline-block bg-easy-orange text-white px-4 py-2 rounded-md hover:bg-easy-gold transition-colors"
+              >
+                Démarrer
+              </Link>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 text-center">
+              <img src="/public/diagnostic-3.svg" alt="Diagnostic Organisationnel" className="h-16 mx-auto mb-4" />
+              <h3 className="text-xl font-medium text-easy-navy mb-2">Diagnostic Organisationnel</h3>
+              <p className="text-gray-600">Évaluation globale de votre entreprise</p>
+              <Link
+                to="/diagnostic/organisationnel"
+                className="mt-4 inline-block bg-easy-orange text-white px-4 py-2 rounded-md hover:bg-easy-gold transition-colors"
+              >
+                Démarrer
+              </Link>
+            </div>
+          </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-gray-500">
-            Besoin d'aide pour choisir ? Contactez-nous à support@easycompany.be
-          </p>
+          <div className="mt-12 text-center">
+            <p className="text-sm text-gray-500">
+              Besoin d'aide pour choisir ? Contactez-nous à{' '}
+              <a href="mailto:support@easycompany.be" className="text-easy-orange hover:text-easy-gold">
+                support@easycompany.be
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
