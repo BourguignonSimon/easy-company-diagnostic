@@ -5,85 +5,50 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <>
-      <header>
-        <nav>
-          <div className="logo">
-            <img src="/public/logo.svg" alt="Easy Company Logo" />
-          </div>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#diagnostics">Diagnostics</a></li>
-            <li><a href="#results">Results</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <section className="hero" id="home">
-        <div className="hero-content">
-          <h1>Easy is Smart - Smart is Easy</h1>
-          <p>Évaluez la performance et la santé de votre entreprise</p>
-          <a href="/diagnostic/rapide" className="btn">Commencer un diagnostic</a>
-        </div>
-        <div className="hero-image">
-          <img src="/public/hero-image.jpg" alt="Easy Company Solutions" />
-        </div>
-      </section>
-
-      <section className="diagnostics" id="diagnostics">
-        <h2>Nos Diagnostics</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-8">
-          Nos diagnostics vous permettent d'identifier les forces et les faiblesses de votre entreprise,
-          afin de mettre en place des actions ciblées pour améliorer sa performance et sa compétitivité.
-          Choisissez le format qui vous convient le mieux.
+    <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-easy-navy mb-6">
+          Optimisez votre entreprise avec nos diagnostics
+        </h1>
+        <p className="text-gray-600 mb-12">
+          Nos diagnostics vous permettent d'identifier les forces et faiblesses de votre entreprise
+          afin de mettre en place des actions ciblées pour améliorer sa performance.
         </p>
-        <div className="diagnostic-grid">
-          <div className="diagnostic-card">
-            <img src="/public/diagnostic-1.svg" alt="Diagnostic Rapide" />
-            <h3>Diagnostic Rapide</h3>
-            <p>Évaluation stratégique en quelques minutes</p>
-            <a href="/diagnostic/rapide" className="btn">Démarrer</a>
-          </div>
-          <div className="diagnostic-card">
-            <img src="/public/diagnostic-2.svg" alt="Diagnostic Individuel" />
-            <h3>Diagnostic Individuel</h3>
-            <p>Analyse approfondie de votre potentiel</p>
-            <a href="/diagnostic/individuel" className="btn">Démarrer</a>
-          </div>
-          <div className="diagnostic-card">
-            <img src="/public/diagnostic-3.svg" alt="Diagnostic Organisationnel" />
-            <h3>Diagnostic Organisationnel</h3>
-            <p>Évaluation globale de votre entreprise</p>
-            <a href="/diagnostic/organisationnel" className="btn">Démarrer</a>
-          </div>
-        </div>
-      </section>
 
-      <footer id="contact">
-        <div className="footer-content">
-          <div className="footer-logo">
-            <img src="/public/logo.svg" alt="Easy Company Logo" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white rounded-lg shadow-md p-6 text-center">
+            <img src="/public/diagnostic-1.svg" alt="Diagnostic Rapide" className="h-16 mx-auto mb-4" />
+            <h3 className="text-xl font-medium text-easy-navy mb-2">Diagnostic Rapide</h3>
+            <p className="text-gray-600">Évaluation stratégique en 2 minutes</p>
+            <a href="/diagnostic/rapide" className="mt-4 inline-block bg-easy-orange text-white px-4 py-2 rounded-md hover:bg-easy-gold transition-colors">
+              Démarrer
+            </a>
           </div>
-          <div className="footer-links">
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#diagnostics">Diagnostics</a></li>
-              <li><a href="#results">Results</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
+          <div className="bg-white rounded-lg shadow-md p-6 text-center">
+            <img src="/public/diagnostic-2.svg" alt="Diagnostic Individuel" className="h-16 mx-auto mb-4" />
+            <h3 className="text-xl font-medium text-easy-navy mb-2">Diagnostic Individuel</h3>
+            <p className="text-gray-600">Analyse approfondie de votre potentiel</p>
+            <a href="/diagnostic/individuel" className="mt-4 inline-block bg-easy-orange text-white px-4 py-2 rounded-md hover:bg-easy-gold transition-colors">
+              Démarrer
+            </a>
           </div>
-          <div className="footer-social">
-            <a href="#"><i className="fab fa-facebook-f"></i></a>
-            <a href="#"><i className="fab fa-twitter"></i></a>
-            <a href="#"><i className="fab fa-linkedin-in"></i></a>
+          <div className="bg-white rounded-lg shadow-md p-6 text-center">
+            <img src="/public/diagnostic-3.svg" alt="Diagnostic Organisationnel" className="h-16 mx-auto mb-4" />
+            <h3 className="text-xl font-medium text-easy-navy mb-2">Diagnostic Organisationnel</h3>
+            <p className="text-gray-600">Évaluation globale de votre entreprise</p>
+            <a href="/diagnostic/organisationnel" className="mt-4 inline-block bg-easy-orange text-white px-4 py-2 rounded-md hover:bg-easy-gold transition-colors">
+              Démarrer
+            </a>
           </div>
         </div>
-        <div className="footer-copyright">
-          <p>&copy; 2023 Easy Company Diagnostic. All rights reserved.</p>
+
+        <div className="mt-12 text-center">
+          <p className="text-sm text-gray-500">
+            Besoin d'aide pour choisir ? Contactez-nous à <a href="mailto:support@easycompany.be" className="text-easy-orange hover:text-easy-gold">support@easycompany.be</a>
+          </p>
         </div>
-      </footer>
-    </>
+      </div>
+    </div>
   );
 };
 
