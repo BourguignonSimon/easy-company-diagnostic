@@ -33,6 +33,11 @@ const Home = () => {
 
       <section className="diagnostics" id="diagnostics">
         <h2>Nos Diagnostics</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+          Nos diagnostics vous permettent d'identifier les forces et les faiblesses de votre entreprise,
+          afin de mettre en place des actions ciblées pour améliorer sa performance et sa compétitivité.
+          Choisissez le format qui vous convient le mieux.
+        </p>
         <div className="diagnostic-grid">
           <div className="diagnostic-card">
             <img src="/public/diagnostic-1.svg" alt="Diagnostic Rapide" />
